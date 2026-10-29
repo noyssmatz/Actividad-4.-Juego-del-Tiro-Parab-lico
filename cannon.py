@@ -21,8 +21,8 @@ def tap(x, y):
         ball.x = -199
         ball.y = -199
         # Velocidad más rápida para el proyectil
-        speed.x = (x + 200) / 15
-        speed.y = (y + 200) / 15
+        speed.x = (x + 200) / 5
+        speed.y = (y + 200) / 5
 
 def inside(xy):
     "Return True if xy within screen."
@@ -51,7 +51,7 @@ def move():
 
     # Velocidad más rápida para los balones
     for target in targets:
-        target.x -= 2.5
+        target.x -= 3
 
     if inside(ball):
         speed.y -= 0.35
@@ -70,7 +70,7 @@ def move():
             targets.append(target)
 
     draw()
-    ontimer(move, 50)
+    ontimer(move, 30)
 
 setup(420, 420, 370, 0)
 hideturtle()
